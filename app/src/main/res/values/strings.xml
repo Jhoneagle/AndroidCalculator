@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroidCalculator</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="buttonPlus">+</string>
+    <string name="buttonMinus">-</string>
+    <string name="buttonMultiply">*</string>
+    <string name="buttonDivide">/</string>
+    <string name="buttonClear">C</string>
+    <string name="buttonResult">=</string>
+
+    <string name="buttonZero">0</string>
+    <string name="buttonOne">1</string>
+    <string name="buttonTwo">2</string>
+    <string name="buttonThree">3</string>
+    <string name="buttonFour">4</string>
+    <string name="buttonFive">5</string>
+    <string name="buttonSix">6</string>
+    <string name="buttonSeven">7</string>
+    <string name="buttonEight">8</string>
+    <string name="buttonNine">9</string>
+
+    <string name="buttonRoot">(root)</string>
+    <string name="buttonSquare">x^2</string>
+    <string name="buttonBrackets_open">(</string>
+    <string name="buttonBrackets_close">)</string>
+    <string name="buttonDot">.</string>
+    <string name="buttonComma">,</string>
+
+    <string name="buttonProsent">%</string>
+    <string name="buttonRemove">(remove)</string>
+    <string name="buttonSin">sin</string>
+    <string name="buttonCos">cos</string>
+    <string name="buttonTan">tan</string>
+    <string name="buttonPii">pii</string>
+
+    <string name="buttonRAD">RAD</string>
+    <string name="buttonDegree">DEG</string>
+    <string name="buttonABS">|x|</string>
+
+    <string name="buttonLog">log</string>
+    <string name="buttonLn">ln</string>
+    <string name="buttonNepper">e</string>
+    <string name="buttonReciprocal">1/x</string>
+    <string name="buttonFactorial">!</string>
+    <string name="buttonPower">x^y</string>
+</resources>

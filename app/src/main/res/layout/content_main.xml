@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="io.github.jhoneagle.androidcalculator.activity.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <LinearLayout
+        android:id="@+id/calculator"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ecf0f1"
+        android:orientation="vertical"
+        tools:context="com.javapapers.calculator.MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/input_output"
+                style="@style/calculator" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonFactorial"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonFactorial" />
+
+            <Button
+                android:id="@+id/buttonLn"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonLn"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonLog"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonLog"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonAbs"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonABS"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonDegree"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonDegree"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonReciprocal"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonReciprocal"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonSin"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonSin"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonCos"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonCos"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonTan"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonTan"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonRAD"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonRAD"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonSquare"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonSquare"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonPower"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonPower"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonRoot"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonRoot"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonPii"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonPii"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonNepper"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonNepper"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonProsent"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonProsent"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonBrackets_open"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonBrackets_open"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonBrackets_close"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonBrackets_close"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonRemove"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonRemove"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonClear"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonClear"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonOne"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonOne"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonTwo"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonTwo"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonThree"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonThree"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonDivide"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonDivide"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/button42"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text=""
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonFour"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonFour"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonFive"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonFive"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonSix"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonSix"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonMultiply"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonMultiply"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/button47"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text=""
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonSeven"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonSeven"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonEight"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonEight"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonNine"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonNine"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonMinus"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonMinus"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/button52"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text=""
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonDot"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonDot"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonZero"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonZero"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonResult"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonResult"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/buttonPlus"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text="@string/buttonPlus"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/button57"
+                style="@style/button"
+                android:onClick="handleClick"
+                android:text=""
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
