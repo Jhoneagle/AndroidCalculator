@@ -30,7 +30,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        calc = new CalcController((TextView) findViewById(R.id.input_output));
+        TextView input = (TextView) findViewById(R.id.input);
+        TextView output = (TextView) findViewById(R.id.output);
+        TextView output2 = (TextView) findViewById(R.id.output2);
+        TextView output3 = (TextView) findViewById(R.id.output3);
+
+        calc = new CalcController(input, output, output2, output3);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);

@@ -7,205 +7,245 @@ import android.widget.TextView;
 import io.github.jhoneagle.androidcalculator.R;
 
 public class CalcController {
-    private TextView inputOutput;
+    private TextView input;
+    private TextView output;
+    private TextView output2;
+    private TextView output3;
     private Evaluator evaluator;
 
-    public CalcController(TextView inputOutput) {
-        this.inputOutput = inputOutput;
+    public CalcController(TextView input, TextView output, TextView output2, TextView output3) {
+        this.input = input;
+        this.output = output;
+        this.output2 = output2;
+        this.output3 = output3;
         this.evaluator = new Evaluator();
+
+        clearAll();
     }
 
     public void add(View view) {
         switch (view.getId()) {
             case  R.id.buttonBrackets_close: {
-                inputOutput.append(")");
+                input.append(")");
                 break;
             }
             case R.id.buttonBrackets_open: {
-                inputOutput.append("(");
+                input.append("(");
                 break;
             }
             case  R.id.buttonTwo: {
-                inputOutput.append("2");
+                input.append("2");
                 break;
             }
             case R.id.buttonThree: {
-                inputOutput.append("3");
+                input.append("3");
                 break;
             }
             case  R.id.buttonTan: {
-                inputOutput.append("tan(");
+                input.append("tan(");
                 break;
             }
             case R.id.buttonSquare: {
-                inputOutput.append("^2");
+                input.append("^2");
                 break;
             }
             case  R.id.buttonSix: {
-                inputOutput.append("6");
+                input.append("6");
                 break;
             }
             case R.id.buttonSin: {
-                inputOutput.append("sin(");
+                input.append("sin(");
                 break;
             }
             case  R.id.buttonSeven: {
-                inputOutput.append("7");
+                input.append("7");
                 break;
             }
             case R.id.buttonRoot: {
-                inputOutput.append("sqrt(");
+                input.append("sqrt(");
                 break;
             }
             case  R.id.buttonRemove: {
-                Editable editableText = inputOutput.getEditableText();
-                int length = editableText.length();
+                String old = this.input.getText().toString();
 
-                if (length > 0) {
-                    editableText.delete(length - 1, length);
+                if (!old.isEmpty()) {
+                    String substring = old.substring(0, (old.length() - 1));
+                    this.input.setText(substring);
                 }
 
                 break;
             }
             case  R.id.buttonAbs: {
-                inputOutput.append("abs(");
+                input.append("abs(");
                 break;
             }
             case  R.id.buttonPower: {
-                inputOutput.append("^");
+                input.append("^");
                 break;
             }
             case R.id.buttonPii: {
-                inputOutput.append("pi");
+                input.append("pi");
                 break;
             }
             case  R.id.buttonOne: {
-                inputOutput.append("1");
+                input.append("1");
                 break;
             }
             case R.id.buttonNine: {
-                inputOutput.append("9");
+                input.append("9");
                 break;
             }
             case  R.id.buttonNepper: {
-                inputOutput.append("e");
+                input.append("e");
                 break;
             }
             case R.id.buttonMultiply: {
-                inputOutput.append("*");
+                input.append("*");
                 break;
             }
             case  R.id.buttonMinus: {
-                inputOutput.append("-");
+                input.append("-");
                 break;
             }
             case R.id.buttonLog: {
-                inputOutput.append("log(");
+                input.append("log(");
                 break;
             }
             case  R.id.buttonLn: {
-                inputOutput.append("ln(");
+                input.append("ln(");
                 break;
             }
             case R.id.buttonClear: {
-                Editable editableText = inputOutput.getEditableText();
-                editableText.delete(0, editableText.length());
+                clearAll();
                 break;
             }
             case R.id.buttonCos: {
-                inputOutput.append("cos(");
+                input.append("cos(");
                 break;
             }
             case  R.id.buttonDivide: {
-                inputOutput.append("/");
+                input.append("/");
                 break;
             }
             case R.id.buttonEight: {
-                inputOutput.append("8");
+                input.append("8");
                 break;
             }
             case R.id.buttonFactorial: {
-                inputOutput.append("!");
+                input.append("!");
                 break;
             }
             case  R.id.buttonFive: {
-                inputOutput.append("5");
+                input.append("5");
                 break;
             }
             case R.id.buttonFour: {
-                inputOutput.append("4");
+                input.append("4");
                 break;
             }
             case R.id.buttonZero: {
-                inputOutput.append("0");
+                input.append("0");
                 break;
             }
             case R.id.buttonPlus: {
-                inputOutput.append("+");
+                input.append("+");
                 break;
             }
             case  R.id.buttonResult: {
-                String old = inputOutput.getText().toString();
-                String asString;
+                double value = solveResult();
 
-                asString = "" + Double.toString(evaluator.eval(old));
+                if (!Double.isNaN(value)) {
+                    String asString = value + "";
+                    setNewValues(asString);
+                } else {
+                    setNewValues("NaN");
+                }
 
-                Editable editableText = inputOutput.getEditableText();
-                editableText.delete(0, editableText.length());
-                inputOutput.append(asString);
                 break;
             }
             case R.id.buttonReciprocal: {
-                String old = inputOutput.getText().toString();
-                String asString;
+                double value = solveResult();
 
-                asString = "" + Double.toString(1 / evaluator.eval(old));
+                if (!Double.isNaN(value)) {
+                    String asString = (1 / value) + "";
+                    setNewValues(asString);
+                } else {
+                    setNewValues("NaN");
+                }
 
-                Editable editableText = inputOutput.getEditableText();
-                editableText.delete(0, editableText.length());
-                inputOutput.append(asString);
                 break;
             }
             case  R.id.buttonRAD: {
-                String old = inputOutput.getText().toString();
-                String asString;
+                double value = solveResult();
 
-                asString = "" + Double.toString(Math.toRadians(evaluator.eval(old)));
+                if (!Double.isNaN(value)) {
+                    String asString = Math.toRadians(value) + "";
+                    setNewValues(asString);
+                } else {
+                    setNewValues("NaN");
+                }
 
-                Editable editableText = inputOutput.getEditableText();
-                editableText.delete(0, editableText.length());
-                inputOutput.append(asString);
                 break;
             }
             case  R.id.buttonDegree: {
-                String old = inputOutput.getText().toString();
-                String asString;
+                double value = solveResult();
 
-                asString = "" + Double.toString(Math.toDegrees(evaluator.eval(old)));
+                if (!Double.isNaN(value)) {
+                    String asString = Math.toDegrees(value) + "";
+                    setNewValues(asString);
+                } else {
+                    setNewValues("NaN");
+                }
 
-                Editable editableText = inputOutput.getEditableText();
-                editableText.delete(0, editableText.length());
-                inputOutput.append(asString);
                 break;
             }
             case R.id.buttonProsent: {
-                String old = inputOutput.getText().toString();
-                String asString;
+                double value = solveResult();
 
-                asString = "" + Double.toString(evaluator.eval(old) / 100);
+                if (!Double.isNaN(value)) {
+                    String asString = (value / 100) + "";
+                    setNewValues(asString);
+                } else {
+                    setNewValues("NaN");
+                }
 
-                Editable editableText = inputOutput.getEditableText();
-                editableText.delete(0, editableText.length());
-                inputOutput.append(asString);
                 break;
             }
             case R.id.buttonDot: {
-                inputOutput.append(".");
+                input.append(".");
                 break;
             }
             default: {
                 break;
             }
         }
+    }
+
+    private void clearAll() {
+        this.output3.setText("");
+        this.output2.setText("");
+        this.output.setText("");
+        this.input.setText("");
+    }
+
+    private double solveResult() {
+        String equation = this.input.getText().toString();
+
+        if (equation.isEmpty()) {
+            return Double.NaN;
+        } else {
+            try {
+                return this.evaluator.eval(equation);
+            } catch (Exception e) {
+                return Double.NaN;
+            }
+        }
+    }
+
+    private void setNewValues(String output) {
+        this.output3.setText(this.output2.getText());
+        this.output2.setText(this.output.getText());
+        this.output.setText(output);
+        this.input.setText("");
     }
 }
