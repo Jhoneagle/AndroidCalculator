@@ -1,6 +1,5 @@
 package io.github.jhoneagle.androidcalculator.logic;
 
-import android.text.Editable;
 import android.view.View;
 import android.widget.TextView;
 
@@ -155,7 +154,7 @@ public class CalcController {
                 double value = solveResult();
 
                 if (!Double.isNaN(value)) {
-                    String asString = value + "";
+                    String asString = Double.toString(value);
                     setNewValues(asString);
                 } else {
                     setNewValues("NaN");
@@ -167,7 +166,7 @@ public class CalcController {
                 double value = solveResult();
 
                 if (!Double.isNaN(value)) {
-                    String asString = (1 / value) + "";
+                    String asString = Double.toString((1 / value));
                     setNewValues(asString);
                 } else {
                     setNewValues("NaN");
@@ -179,7 +178,7 @@ public class CalcController {
                 double value = solveResult();
 
                 if (!Double.isNaN(value)) {
-                    String asString = Math.toRadians(value) + "";
+                    String asString = Double.toString(Math.toRadians(value));
                     setNewValues(asString);
                 } else {
                     setNewValues("NaN");
@@ -191,7 +190,7 @@ public class CalcController {
                 double value = solveResult();
 
                 if (!Double.isNaN(value)) {
-                    String asString = Math.toDegrees(value) + "";
+                    String asString = Double.toString(Math.toDegrees(value));
                     setNewValues(asString);
                 } else {
                     setNewValues("NaN");
@@ -203,7 +202,7 @@ public class CalcController {
                 double value = solveResult();
 
                 if (!Double.isNaN(value)) {
-                    String asString = (value / 100) + "";
+                    String asString = Double.toString((value / 100));
                     setNewValues(asString);
                 } else {
                     setNewValues("NaN");
