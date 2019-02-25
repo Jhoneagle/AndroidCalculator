@@ -1,9 +1,9 @@
 package io.github.jhoneagle.androidcalculator.logic;
 
 public class Evaluator {
-    private static String str;
-    private static int pos = -1;
-    private static int ch;
+    private String str;
+    private int pos;
+    private int ch;
 
     /**
      * Evaluates mathematical expression which can contain various basic operations. Also support parentheses.
@@ -14,6 +14,7 @@ public class Evaluator {
      */
     public double eval(String param) {
         str = param;
+        pos = -1;
         nextChar();
         double x = parseExpression();
 
